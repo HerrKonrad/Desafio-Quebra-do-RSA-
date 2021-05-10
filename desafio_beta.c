@@ -5,7 +5,7 @@
 int verificarSucesso(long n, long d1, long d2)
 {
     int sucesso = 0;
-     n = ( n < 0) ? - n : n;
+    n = ( n < 0) ? - n : n;
 
     if(d2 != n && d1 > 1)
     {
@@ -26,8 +26,6 @@ long buscarMenorDivisor(long num)
     long resultado = 0;
     num = num < 0 ? -num : num;
     long numSQRT = sqrt(num);
-
-   // num = ( num < 0 ) ? - num : num;
 
     if(num % 2 != 0)
     {
