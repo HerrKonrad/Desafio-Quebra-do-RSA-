@@ -77,9 +77,6 @@ long pedirNumero()
 
 int main()
 {
-    printf("long em byts: %i \n", sizeof(long int));
-
-
     size_t quantidade = pedirQuantidadeNumeros();
     long valores[quantidade];
     size_t i;
