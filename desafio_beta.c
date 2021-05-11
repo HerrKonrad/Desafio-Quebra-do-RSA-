@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 
 int verificarSucesso(long n, long d1, long d2)
@@ -29,7 +30,7 @@ long buscarMenorDivisor(long num)
 
     if(num % 2 != 0)
     {
-        for( i = 3 ; i <= numSQRT ; i += 2)
+        for( i = 3 ; i <= numSQRT ; i += 2 )
         {
             if ( num % i == 0)
             {
@@ -68,14 +69,14 @@ long pedirNumero()
     long temp = 0;
 
     puts("# Qual o valor da chave n? ");
-    scanf("%li", &temp);
+    scanf( "%li", &temp );
 
     return temp;
 }
 
 long verificarMaiorNumero( long a, long b )
 {
-    return (a > b || a==b) ? a : b;
+    return ( a > b || a == b ) ? a : b;
 }
 
 
@@ -86,7 +87,7 @@ long verificarMenorNumero( long a, long b )
     {
         resultado = b;
     }
-   else if( b == 0 )
+    else if( b == 0 )
     {
         resultado = a;
     }
@@ -98,14 +99,12 @@ long verificarMenorNumero( long a, long b )
     {
         resultado = b;
     }
-
     return resultado;
 }
 
 int main()
 {
     size_t quantidade = pedirQuantidadeNumeros();
-    long valores[quantidade];
     size_t i;
     long maior_div, menor_div;
     int sucesso = 0;
@@ -114,7 +113,7 @@ int main()
     long numero = 0;
     long numero_original = 0;
 
-    for( i = 0 ; i < quantidade ; i++)
+    for( i = 0 ; i < quantidade ; i++ )
     {
 
         numero = pedirNumero();
