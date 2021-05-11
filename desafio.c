@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include <math.h>
 
-/* Disciplina Algoritmos e Programação
- * Professor: Élgio Schlemer
- * Autor: Arthur Luís Kuck Konrad
+/* Disciplina Algoritmos e ProgramaÃ§Ã£o
+ * Professor: Ã‰lgio Schlemer
+ * Autor: Arthur LuÃ­s Kuck Konrad
  * Algoritmo que encontra o maior e menor divisor de um numero,
  * sendo otimizado para numeros gigantescos dentro do limite dos 64 bits com sinal ( caso o compilador e arquitetura
- * permitam, caso executa em 32bits, o nosso limite será o intervalo de 32 bits com sinal )
+ * permitam, caso executa em 32bits, o nosso limite serÃ¡ o intervalo de 32 bits com sinal )
  */
 
- //Calculos e operações
+ //Calculos e operaÃ§Ãµes
 
- // Esta função verifica se de acordo com o numeor, o menor e maior divisor o numero era primo, se for primo não houve sucesso
+ // Esta funÃ§Ã£o verifica se de acordo com o numeor, o menor e maior divisor o numero era primo, se for primo nÃ£o houve sucesso
 int verificarSucesso(long n, long d1, long d2)
 {
     int sucesso = 0;
@@ -26,7 +26,7 @@ int verificarSucesso(long n, long d1, long d2)
     return sucesso;
 }
 
-// Se já sabemos o menor divisor basta apenas dividir o numero pelo menor divisor que teremos o maior divisor
+// Se jÃ¡ sabemos o menor divisor basta apenas dividir o numero pelo menor divisor que teremos o maior divisor
 long buscarMaiorDivisor(long num, long menor_div)
 {
     return  menor_div == 1 ? num : num / menor_div;
@@ -34,11 +34,11 @@ long buscarMaiorDivisor(long num, long menor_div)
 
 
 /*
- * Aqui está a parte mais complexa, precisamos fazer algumas otimizações para numeros muito grandes:
- * 1° Quando o numero for par, já sabemos o resultado, o menor divisor é zero e o maior a metade
- * não há necessidade de entrar no laço
- * 2° Agora para os numeros impares, apenas verificaremos até a raiz quadrada do numero, depois da raiz quadrada nada acharemos
- * e também pularemos o laço de 2 em 2, ou seja, só buscando numeros impares, isso reduz as verificações pela metade
+ * Aqui estÃ¡ a parte mais complexa, precisamos fazer algumas otimizaÃ§Ãµes para numeros muito grandes:
+ * 1Â° Quando o numero for par, jÃ¡ sabemos o resultado, o menor divisor Ã© zero e o maior a metade
+ * nÃ£o hÃ¡ necessidade de entrar no laÃ§o
+ * 2Â° Agora para os numeros impares, apenas verificaremos atÃ© a raiz quadrada do numero, depois da raiz quadrada nada acharemos
+ * e tambÃ©m pularemos o laÃ§o de 2 em 2, ou seja, sÃ³ buscando numeros impares, isso reduz as verificaÃ§Ãµes pela metade
  */
 long buscarMenorDivisor(long num)
 {
@@ -114,7 +114,7 @@ size_t pedirQuantidadeNumeros()
     scanf("%ld", &temp);
     if( temp <= 0)
     {
-        temp = pedirQuantidadeNumeros(); //O numero de quantidade não pode ser menor igual a zero, o programa vai ficar pedindo até vir um válido
+        temp = pedirQuantidadeNumeros(); //O numero de quantidade nÃ£o pode ser menor igual a zero, o programa vai ficar pedindo atÃ© vir um vÃ¡lido
     }
     qtd = temp;
 
@@ -143,7 +143,7 @@ int main()
 
             printf("%li = %li * %li \n", numero, menor_div, maior_div);
 
-            sucesso += verificarSucesso(numero, menor_div, maior_div); //Se não for primo, houve sucesso
+            sucesso += verificarSucesso(numero, menor_div, maior_div); //Se nÃ£o for primo, houve sucesso
 
             maior_num = verificarMaiorNumero(numero, maior_num);
             menor_num = verificarMenorNumero(numero, menor_num);
