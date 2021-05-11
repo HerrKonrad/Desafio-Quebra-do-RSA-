@@ -25,7 +25,7 @@ long buscarMenorDivisor(long num)
     size_t i;
     long resultado = 0;
     num = num < 0 ? -num : num;
-    long numSQRT = sqrt(num);
+    long numSQRT = (long) sqrt(num);
 
     if(num % 2 != 0)
     {
@@ -73,6 +73,35 @@ long pedirNumero()
     return temp;
 }
 
+long verificarMaiorNumero( long a, long b )
+{
+    return (a > b || a==b) ? a : b;
+}
+
+
+long verificarMenorNumero( long a, long b )
+{
+    long resultado = 0;
+    if( a == 0 )
+    {
+        resultado = b;
+    }
+   else if( b == 0 )
+    {
+        resultado = a;
+    }
+    else if ( a < b )
+    {
+        resultado = a;
+    }
+    else
+    {
+        resultado = b;
+    }
+
+    return resultado;
+}
+
 int main()
 {
     size_t quantidade = pedirQuantidadeNumeros();
@@ -91,27 +120,15 @@ int main()
         numero = pedirNumero();
         if(numero != 0 )
         {
-
             menor_div = buscarMenorDivisor(numero);
             maior_div =  buscarMaiorDivisor(numero, menor_div);
 
             printf("%li = %li * %li \n", numero, menor_div, maior_div);
 
-
             sucesso += verificarSucesso(numero, menor_div, maior_div);
 
-            if (numero > maior_num)
-            {
-                maior_num = numero;
-            }
-            if (menor_num == 0)
-            {
-                menor_num = numero;
-            }
-            else if(numero < menor_num)
-            {
-                menor_num = numero;
-            }
+            maior_num = verificarMaiorNumero(numero, maior_num);
+            menor_num = verificarMenorNumero(numero, menor_num);
         }
     }
 
